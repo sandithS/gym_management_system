@@ -1,70 +1,51 @@
-Gym Management System
-A desktop-based Gym Management System to streamline daily operations like member registration, subscriptions, payments, and attendance tracking. This project is ideal for learning end‑to‑end CRUD application development with Java, GUI frameworks, and a relational database such as MySQL.​
+💪 Gym Management System - Backend
+This repository contains the backend service for the Gym Management System. It is built using Spring Boot, providing a robust and scalable set of RESTful APIs to manage members, trainers, equipment, and classes.
 
-Features
-Member registration and profile management (name, contact, age, plan, join date, etc.).​
+🚀 Key Features
+Member Management: Handle member registration, profiles, and status updates.
 
-Membership plan management (package name, price, duration, description).​
+Trainer Management: Manage trainer schedules and details.
 
-Payment tracking for each member, including due amounts and payment history.​
+Database Integration: Seamlessly connect and manage data using MySQL.
 
-Attendance management to record and review member check‑ins.​
+RESTful APIs: Secure and structured endpoints for frontend integration.
 
-Trainer or staff management (basic details and assigned members or sessions, if implemented).​
+🛠️ Technology Stack
+The project is built on the following core technologies:
 
-Simple, user‑friendly interface designed for use by receptionists and admins with minimal training.​
+Language: Java (JDK 22)
 
-Update this list to exactly match the modules, menus, and forms present in your project UI.
+Framework: Spring Boot (Version 4.0.0-M2)
 
-Tech Stack
-Language: Java
+Build Tool: Maven
 
-GUI: Swing / JavaFX (update based on your code)
+Database: MySQL
 
-Database: MySQL (via JDBC) for persistent data storage.​
+ORM: Spring Data JPA (for persistence)
 
-IDE: NetBeans / IntelliJ / Eclipse (whichever you used).​
+Utility: Lombok (for boilerplate reduction)
 
-Replace or extend these items with your actual technologies (e.g., JDBC driver, build tool like Maven/Gradle).
-
-Project Structure
-Typical project structure (adjust names to match your packages and folders):
-
-src/
-
-ui/ – Forms and GUI screens (login, dashboard, member form, payment form).
-
-dao/ – Data access classes for interacting with MySQL.
-
-model/ – Entity classes such as Member, Plan, Payment, Attendance.
-
-util/ – Helper utilities (DB connection, validation, constants).
-
-resources/ – SQL scripts, configuration files, icons, and images.
-
-docs/ – Screenshots and documentation (optional).
-
-Getting Started
+⚙️ Project Setup and Local Development
 Prerequisites
-Java JDK (version 8 or higher).
+To run this project locally, you need the following installed:
 
-MySQL server installed and running.
+Java Development Kit (JDK) 22
 
-A Java IDE (NetBeans / IntelliJ / Eclipse).
+Maven
 
-MySQL JDBC driver added to the project’s classpath.​
+MySQL Server (Running locally or accessible via network)
 
-Database Setup
-Open MySQL and create a database, for example:
+1. Database Configuration
+The application uses MySQL and is configured to connect to a database named gym_sys_db on localhost:3306.
 
-sql
-CREATE DATABASE gym_management;
-Import the provided SQL schema (e.g., db/gym_management.sql) or run your own schema script to create necessary tables (members, plans, payments, attendance, trainers, etc.).​
+Ensure your MySQL server is running.
 
-Update database credentials in your configuration file or DB utility class, for example:
+Update the src/main/resources/application.yml file with your database credentials:
 
-java
-String url = "jdbc:mysql://localhost:3306/gym_management";
-String user = "root";
-String password = "your_password";
-Make sure this section matches your actual DB name, table names, and connection code.
+YAML
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/gym_sys_db?createDatabaseIfNotExist=true
+    username: <YOUR_MYSQL_USERNAME> # E.g., root
+    password: <YOUR_MYSQL_PASSWORD> # E.g., 1234
